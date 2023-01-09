@@ -1,0 +1,17 @@
+<table class="table table-striped">
+      <thead>
+        <tr>
+            <th>Hall Name</th>
+            <th>Seat Size</th>
+        </tr>
+    </thead>
+<tbody>
+        {{#each ans4}}
+        <tr>
+            <td>{{this._id}}</td>
+            <td>{{this.max_seating}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+    <button id="back" class="btn btn-info" onclick="javascript:(function() { window.history.back(); })()">BACK</button>
+</table>

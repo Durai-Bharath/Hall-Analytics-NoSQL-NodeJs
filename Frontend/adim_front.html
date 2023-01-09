@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>Home Page</title>
+        <style>
+            .button-85 {
+                padding: 0.6em 2em;
+                border: none;
+                outline: none;
+                color: rgb(255, 255, 255);
+                background: #111;
+                cursor: pointer;
+                position: relative;
+                z-index: 0;
+                border-radius: 10px;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+            }
+            .button-48:after {
+                background-color: #FFFFFF;
+            }
+            .button-85:before {
+                content: "";
+                background: linear-gradient(
+                    45deg,
+                    #ff0000,
+                    #ff7300,
+                    #fffb00,
+                    #48ff00,
+                    #00ffd5,
+                    #002bff,
+                    #7a00ff,
+                    #ff00c8,
+                    #ff0000
+                    );
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                -webkit-filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing-button-85 20s linear infinite;
+                transition: opacity 0.3s ease-in-out;
+                border-radius: 10px;
+            }
+            @keyframes glowing-button-85 {
+                0% {
+                    background-position: 0 0;
+                }
+                50% {
+                    background-position: 400% 0;
+                }
+                100% {
+                    background-position: 0 0;
+                }
+            }
+            .button-85:after {
+                z-index: -1;
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #222;
+                left: 0px;
+                top: 0px;
+                border-radius: 10px;
+            }
+            .button-85:hover:before {
+                animation: opacityFallbackIn 0s step-start forwards;
+                clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+            }
+            #c1{
+                position: absolute;
+                top: 150px;
+                left: 650px;
+                padding: 25px 92px;
+                font-size: medium;
+            }
+            #c2{
+                position: absolute;
+                top: 260px;
+                left: 650px;
+                padding: 25px 100px;
+                font-size: medium;
+            }
+            #c3{
+                position: absolute;
+                top: 370px;
+                left: 650px;
+                padding: 25px 92px;
+                font-size: medium;
+            }
+            #c4{
+                position: absolute;
+                top: 480px;
+                left: 650px;
+                padding: 25px 92px;
+                font-size: medium;
+            }
+            #he{
+                position: absolute;
+                left: 680px;
+                top: 50px;
+            }
+            #b1 {
+                background-image: url("https://images.shiksha.com/mediadata/images/1552371387phpNVociK.jpeg");
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+            #he {
+                background:WHITE;
+
+            }
+        </style>
+    </head>
+    <body id = "b1">
+        <h1 id = "he"> Home Page </h1>
+        <div id = "d1">
+            <button class="button-85" id = "c1" role="button"
+                    onclick="window.location.href = 'http://localhost:3000/hall';">
+            HALL</button><br><br><br>
+            <button class="button-85" id = "c2" role="button"
+                    onclick="window.location.href = 'http://localhost:3000/student';">
+            STUDENT</button><br><br><br>
+            <button class="button-85" id = "c3" role="button"
+                    onclick="window.location.href = 'http://localhost:3000/faculty';">
+            FACULTY</button><br><br><br>
+            <button class="button-85" id = "c4" role="button"
+                    onclick="window.location.href = 'aggregate.html';">
+            QUERIES
+                </button><br><br><br>
+        </div>
+    </body>
+</html>

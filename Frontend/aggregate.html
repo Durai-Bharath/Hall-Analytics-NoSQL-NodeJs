@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+ 
+
+<style>
+
+.but1 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.but1 {
+    /* display: flex; */
+    /* justify-content: center;
+  flex-direction: row; */
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.but1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+ 
+body {
+    font-size: large;
+  color: rgb(255, 0, 60);
+  background-color: aqua;
+}
+p {
+  text-indent: 50px;
+  text-size-adjust: 20px;
+  text-align: justify;
+  letter-spacing: 3px;
+}
+
+
+</style>
+    <title>
+        Aggregate Queries
+    </title>
+</head>
+<body>
+    <p>
+        List the students from IT department.
+        <button class="but1"
+        onclick="window.location.href = 'http://localhost:3000/aggregate/ans1';">
+            Aggregate
+        </button>
+    </p>
+    <p>
+        Number of halls in each department.
+        <button class="but1"
+        onclick="window.location.href = 'http://localhost:3000/aggregate/ans2';">
+            Aggregate
+        </button>
+    </p>
+    <p>
+        Hall with maximum seating capacity.
+        <button class="but1"
+        onclick="window.location.href = 'http://localhost:3000/aggregate/ans3';">
+            Aggregate
+        </button>
+    </p>
+    <p>
+        Hall with minimum seating capacity.
+        <button class="but1"
+        onclick="window.location.href = 'http://localhost:3000/aggregate/ans4';">
+            Aggregate
+        </button>
+    </p>
+    <p>
+        Faculty of IT department.
+        <button class="but1"
+        onclick="window.location.href = 'http://localhost:3000/aggregate/ans5';">
+            Aggregate
+        </button>
+    </p>
+    <p>
+        Students who conducted maximum events.
+        <button class="but1"
+        onclick="window.location.href = 'http://localhost:3000/aggregate/ans6';">
+            Aggregate
+        </button>
+    </p>
+    <p>
+        Faculty who conducted maximum events.
+        <button class="but1"
+        onclick="window.location.href = 'http://localhost:3000/aggregate/ans7';">
+            Aggregate
+        </button>
+    </p>
+    <button id="back" class="btn btn-info" onclick="javascript:(function() { window.history.back(); })()">BACK</button>
+</body>

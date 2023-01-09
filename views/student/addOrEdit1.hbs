@@ -1,0 +1,37 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/student" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{student._id}}">
+    <div class="form-group">
+        <label>Student ID</label>
+        <input type="number" class="form-control" name="Student_id" placeholder="ID" value="{{student.Student_id}}">
+    </div>
+    <div class="form-group">
+        <label>Student Name</label>
+        <input type="text" class="form-control" name="Student_name" placeholder="Name" value="{{student.Student_name}}">
+        <div class="text-danger">
+            {{student.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Dept</label>
+        <input type="text" class="form-control" name="Student_dept" placeholder="dept" value="{{student.Student_dept}}">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email" value="{{student.email}}">
+        <div class="text-danger">
+            {{student.emailError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <input type="text" class="form-control" name="Address" placeholder="address" value="{{student.Address}}">
+    </div>
+    <div class = "form-group">
+        <label>Phone</label>
+        <input type="number" class="form-control" name="Phone" placeholder="+91" value="{{student.Phone}}">
+    </div>
+    <div class="form-group ">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/student/list1"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>

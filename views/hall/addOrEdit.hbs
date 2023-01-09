@@ -1,0 +1,80 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/hall" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{hall._id}}">
+    <div class="form-group">
+        <label>Hall ID</label>
+        <input type="number" class="form-control" name="Hall_id" placeholder="Full Name" value="{{hall.Hall_id}}">
+    </div>
+    <div class="form-group">
+        <label>Hall Name</label>
+        <input type="text" class="form-control" name="Hall_name" placeholder="Full Name" value="{{hall.Hall_name}}">
+        <div class="text-danger">
+            {{hall.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Event Name</label>
+        <input type="text" class="form-control" name="Event_name" placeholder="Event Name" value="{{hall.Event_name}}">
+    </div>
+        <div class="form-group">
+        <label>Event Handler Id</label>
+        <input type="number" class="form-control" name="Event_handler_id" placeholder="handler id" value="{{hall.Event_handler_id}}">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email" value="{{hall.email}}">
+        <div class="text-danger">
+            {{hall.emailError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Session</label>
+        <input type="text" class="form-control" name="session" placeholder="session" value="{{hall.session}}">
+    </div>
+    <div class = "form-group">
+        <label>Event_Date</label>
+        <input type="text" class="form-control" name="Event_Date" placeholder="dd-mm-yyyy" value="{{hall.Event_Date}}">
+    </div>
+    <div class="form-group">
+        <label>Hall_Details :</label>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Hall_Dept</label>
+            <input type="text" class="form-control" name="Hall_Dept" placeholder="dept" value="{{hall.Hall_Dept}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Floor</label>
+            <input type="number" class="form-control" name="Floor" placeholder="floor" value="{{hall.Floor}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Capacity</label>
+            <input type="number" class="form-control" name="Capacity" placeholder="capacity" value="{{hall.Capacity}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Guest_Details :</label>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Guest_Name</label>
+            <input type="text" class="form-control" name="Guest_Name" placeholder="Guest_Name" value="{{hall.Guest_Name}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Organisation</label>
+            <input type="text" class="form-control" name="Organisation" placeholder="org" value="{{hall.Organisation}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Phone_No</label>
+            <input type="number" class="form-control" name="Phone_No" placeholder="+91" value="{{hall.Phone_No}}">
+        </div>
+    </div>
+    <div class="form-group ">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/hall/list"><i class="fa fa-list-alt"></i> View All</a>
+        {{!-- <a class="btn btn-secondary" onclick="window.Location.href = 'Frontend\adim_front.html';"><i class="fa fa-home"></i> Home Page</a> --}}
+        {{!-- <button class="but"
+        onclick="window.location.href = 'Frontend/adim_front.html';">
+            Home Page
+        </button> --}}
+    </div>
+</form>

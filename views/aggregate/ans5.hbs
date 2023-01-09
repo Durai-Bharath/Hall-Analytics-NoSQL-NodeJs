@@ -1,0 +1,17 @@
+<table class="table table-striped">
+      <thead>
+        <tr>
+            <th>Faculty name</th>
+            <th>Faculty Dept</th>
+        </tr>
+    </thead>
+<tbody>
+        {{#each ans5}}
+        <tr>
+            <td>{{this.Faculty_name}}</td>
+            <td>{{this.Faculty_dept}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+    <button id="back" class="btn btn-info" onclick="javascript:(function() { window.history.back(); })()">BACK</button>
+</table>

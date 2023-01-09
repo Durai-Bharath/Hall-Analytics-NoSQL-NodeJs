@@ -1,0 +1,46 @@
+<h3><a class="btn btn-secondary" href="/hall"><i class="fa fa-plus"></i> Create New</a> Hall List</h3>
+<button id="back" class="btn btn-info" onclick="javascript:(function() { window.history.back(); })()">BACK</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Hall id</th>
+            <th>Hall name</th>
+            <th>Event name</th>
+            <th>Handler ID</th>
+            <th>email</th>
+            <th>Session</th>
+            <th>Date</th>
+            <th>Hall Dept</th>
+            <th>Floor</th>
+            <th>Hall Capacity</th>
+            <th>Guest Name</th>
+            <th>Organisation</th>
+            <th>Guest Phone</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.Hall_id}}</td>
+            <td>{{this.Hall_name}}</td>
+            <td>{{this.Event_name}}</td>
+            <td>{{this.Event_handler_id}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.session}}</td>
+            <td>{{this.Event_Date}}</td>
+            <td>{{this.Hall_Details.Hall_Dept}}</td>
+            <td>{{this.Hall_Details.Floor}}</td>
+            <td>{{this.Hall_Details.Capacity}}</td>
+            <td>{{this.Guest_Details.Guest_Name}}</td>
+            <td>{{this.Guest_Details.Organisation}}</td>
+            <td>{{this.Guest_Details.Phone_No}}</td>
+            <td>
+                <a href="/hall/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/hall/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+<h3><a class="btn btn-secondary" href="/faculty"><i class="fa fa-plus"></i> Create New</a> faculty List</h3>
+<button id="back" class="btn btn-info" onclick="javascript:(function() { window.history.back(); })()">BACK</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Faculty id</th>
+            <th>Faculty name</th>
+            <th>Department</th>
+            <th>email</th>
+            <th>Address</th>
+            <th>Phone</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list2}}
+        <tr>
+            <td>{{this.Faculty_id}}</td>
+            <td>{{this.Faculty_name}}</td>
+            <td>{{this.Faculty_dept}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.Address}}</td>
+            <td>{{this.Phone}}</td>
+            <td>
+                <a href="/faculty/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/faculty/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
