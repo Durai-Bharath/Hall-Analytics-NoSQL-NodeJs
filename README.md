@@ -50,4 +50,4 @@ The **Hall Analytics System** is designed to analyze the hall usage data of a la
      { $lookup: { from : "students" , localField : "Event_handler_id" , foreignField : "Student_id" , as : "id" } },
      { $unwind: "$id" },
      { $group: { _id: "$id.Student_name", Total_Event: { $sum: 1 } } }
-  ]);
+   ]);
