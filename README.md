@@ -45,15 +45,22 @@ The **Hall Analytics System** is designed to analyze the hall usage data of a la
      { $limit: 5 }
    ]);
 
-   // Average duration of hall bookings per department
-   db.bookings.aggregate([
-     { $lookup: {
-       from: "departments",
-       localField: "departmentId",
-       foreignField: "_id",
-       as: "department"
-     }},
-     { $unwind: "$department" },
-     { $group: { _id: "$department.name", avgDuration: { $avg: "$duration" } } },
-     { $sort: { avgDuration: -1 } }
-   ]);
+   // Find the total number of events for each student
+   db.hall.aggregate([
+  {$lookup: {
+      from: "students",        // Join with the 'students' collection
+      localField: "Event_handler_id",  // Field from 'hall' collection
+      foreignField: "Student_id",     // Field from 'students' collection
+      as: "id"                   // Output the results as 'id'
+    }
+  },
+  { 
+    $unwind: "$id"               // Flatten the 'id' array (from the $lookup step)
+  },
+  {
+    $group: {
+      _id: "$id.Student_name",        // Group by student name
+      Total_Event: { $sum: 1 }         // Count the total number of events for each student
+    }
+  }
+])
