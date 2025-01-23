@@ -47,20 +47,7 @@ The **Hall Analytics System** is designed to analyze the hall usage data of a la
 
    // Find the total number of events for each student
    db.hall.aggregate([
-  {$lookup: {
-      from: "students",        // Join with the 'students' collection
-      localField: "Event_handler_id",  // Field from 'hall' collection
-      foreignField: "Student_id",     // Field from 'students' collection
-      as: "id"                   // Output the results as 'id'
-    }
-  },
-  { 
-    $unwind: "$id"               // Flatten the 'id' array (from the $lookup step)
-  },
-  {
-    $group: {
-      _id: "$id.Student_name",        // Group by student name
-      Total_Event: { $sum: 1 }         // Count the total number of events for each student
-    }
-  }
-])
+  { $lookup: { from : "students" , localField : "Event_handler_id" , foreignField : "Student_id" , as : "id" } },
+  { $unwind: "$id" },
+  { $group: { _id: "$id.Student_name", Total_Event: { $sum: 1 } } }
+  ]);
